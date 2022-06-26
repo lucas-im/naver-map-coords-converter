@@ -1,22 +1,20 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "naver-map-coords-converter",
   "version": "0.1",
   "description": "Chrome extension converts naver map's 3587 formatted coords to conventional wg84 format.",
-  "browser_action": {
-    "default_title": "Naver Map Coords Converter"
-  },
   "content_scripts": [
-  {
-    "matches": [
-      "https://map.naver.com/*"
-    ],
-    "js": ["background.js"],
-    "run_end": "document_start"
-  }
+    {
+      "matches": [
+        "https://map.naver.com/*"
+      ],
+      "js": [
+        "background.js"
+      ],
+      "run_end": "document_start"
+    }
   ],
-  "permissions": [
-    "https://map.naver.com/*",
-    "storage"
+  "host_permissions": [
+    "https://map.naver.com/*"
   ]
 }
